@@ -87,12 +87,11 @@
         </div>
       </div>
 
-      <div class="field">
+     <div class="field" id="agree_terms" style="display: none;">
         <label class="label">Agree to Terms</label>
         <div class="control">
           <label class="checkbox">
-            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
-            to the terms and conditions
+            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree to the terms and conditions
           </label>
         </div>
       </div>
@@ -193,5 +192,17 @@
           });
       });
     </script>
+    <script>
+  function toggleAgreeTerms() {
+    var gender = document.querySelector('input[name="Gender"]:checked').value;
+    var agreeTerms = document.getElementById("agree_terms");
+
+    if (gender === "male") {
+      agreeTerms.style.display = "block";
+    } else {
+      agreeTerms.style.display = "none";
+    }
+  }
+</script>
   </body>
 </html>
